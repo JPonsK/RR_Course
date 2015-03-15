@@ -1,5 +1,11 @@
 \documentclass{article}
 
+
+<<load_packages, include=FALSE>>=
+library(xtable)
+@
+
+
 \begin{document}
 
 \section{First Heading}
@@ -19,8 +25,53 @@ print(x)
 x<-1:10
 plot(x)
 print(x)
+hist(rnorm(199))
+
+x<-table(x)
+xtable(x)
+
 
 @
+
+
+
+<<echo=FALSE, results='asis', fig.width=5, fig.height=5, out.width="0.4\\textwidth" >>=
+x<-1:10
+plot(x)
+print(x)
+hist(rnorm(199))
+
+
+
+
+
+
+
+
+<<init, include=FALSE>>=
+## from now on no chunks
+opts_chunk$set(echo = FALSE)
+x<-table(x)
+xtable(x)
+@
+
+
+Now use chache to speed up computations.
+
+<<first_cahche, cache=TRUE>>=
+
+Sys.sleep(20)
+plot(1:3,main="cache figure")
+
+@
+
+
+
+
+
+
+
+
 
 
 \end{document}
