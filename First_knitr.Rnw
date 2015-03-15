@@ -1,17 +1,26 @@
 \documentclass{article}
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 
 \section{First Heading}
+
 This is our first knitr document
 
-<<>>=
+<<echo=FALSE, results='markup'>>=
 x<-1:10
 plot(x)
+print(x)
+
 @
 
 
+
+<<echo=FALSE, results='asis'>>=
+x<-1:10
+plot(x)
+print(x)
+
+@
 
 
 \end{document}
