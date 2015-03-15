@@ -6,4 +6,5 @@ plot(x)
 
 plot(1-x, main = "second plot")
 
-
+### Ausgabe
+print(x)
